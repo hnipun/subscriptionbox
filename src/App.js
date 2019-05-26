@@ -1,50 +1,22 @@
-import {
-    IonApp,
-    IonButton,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonCardSubtitle,
-    IonCardTitle,
-    IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
-} from '@ionic/react';
-import React, {Component} from 'react';
-import BoxDisplay from "./pages/BranchList"
+import React from 'react';
+import '@ionic/core/css/core.css';
+import '@ionic/core/css/ionic.bundle.css';
+import {IonApp} from '@ionic/react';
 
-class App extends Component {
-    state = {
-        chomps: 0,
-    };
-    unchomp = () => {
-        if (this.state.chomps > 0) {
-            this.setState({
-                chomps: this.state.chomps -= 1,
-            });
-        }
-    };
-    chomp = () => {
-        this.setState({
-            chomps: this.state.chomps += 1,
-        });
-    };
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import AppStack from "./pages/AppStack";
 
-    render() {
-        return (
-            <IonApp>
-                <IonHeader>
-                    <IonToolbar color="primary">
-                        <IonTitle>Subscription Boxes</IonTitle>
-                    </IonToolbar>
-                </IonHeader>
-                <IonContent>
-                    <BoxDisplay></BoxDisplay>
-                </IonContent>
-            </IonApp>
-        );
-    }
-}
+const App = () => (
+
+        <Router>
+            <div id="app">
+                <IonApp>
+                    <Route path="/" component={AppStack} />
+                </IonApp>
+            </div>
+        </Router>
+
+);
 
 export default App;

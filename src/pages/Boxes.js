@@ -42,15 +42,12 @@ const Box: React.FC<{}> = () => {
     );
 };
 
-
 const BoxDisplay: React.FC<{}> = () => (
-
-
     <>
         <IonHeader>
             <IonToolbar>
                 <IonButtons slot="start">
-                    <IonMenuButton></IonMenuButton>
+
                 </IonButtons>
                 <IonTitle>Boxes Sorted By Prices</IonTitle>
             </IonToolbar>
